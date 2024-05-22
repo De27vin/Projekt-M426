@@ -1,4 +1,4 @@
-package ch.bbw.jr.projekt;
+package ch.bbw.jr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ public class ProjektApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjektApplication.class, args);
-		//test
+
 	}
 
 }

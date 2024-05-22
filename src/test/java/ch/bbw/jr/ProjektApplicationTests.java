@@ -1,4 +1,4 @@
-package ch.bbw.jr.projekt;
+package ch.bbw.jr;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
