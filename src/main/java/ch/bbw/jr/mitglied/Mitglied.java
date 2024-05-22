@@ -2,8 +2,6 @@ package ch.bbw.jr.mitglied;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-
 @Entity
 @Table(name="member")
 public class Mitglied implements Serializable {
@@ -32,8 +30,7 @@ public class Mitglied implements Serializable {
     private String phone;  // Telefonnummern sollten als String gespeichert werden
 
     @Column(name = "entry_date")
-    @Temporal(TemporalType.DATE)
-    private Date entryDate;
+    private String entryDate;
 
     // Getter und Setter für alle Felder
 
@@ -93,11 +90,11 @@ public class Mitglied implements Serializable {
         this.phone = phone;
     }
 
-    public Date getEntryDate() {
+    public String getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(Date entryDate) {
+    public void setEntryDate(String entryDate) {
         this.entryDate = entryDate;
     }
 }
