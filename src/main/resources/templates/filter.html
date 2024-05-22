@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mitgliederfilter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1>Mitgliederfilter</h1>
+<form id="filterForm">
+
+  <label for="length">Vorname:</label>
+  <input type="number" id="length" name="length" placeholder="Mike" />
+  <label for="length">Nachname:</label>
+  <input type="number" id="lengths" name="length" placeholder="Zogheib" />
+
+  <label for="genre">Aus libanon</label>
+  <select id="genre" name="genre">
+    <option value="auswählen">Auswählen</option>
+    <option value="auswahlJa">Ja</option>
+    <option value="auswahlNein">Nein</option>
+  </select>
+
+  <label for="year">Geburtsjahr:</label>
+  <input type="number" id="year" name="year" placeholder="z.B. 2006" />
+
+  <label for="rating">Herkunft:</label>
+  <select id="rating" name="rating">
+    <option value="">Alle</option>
+    <option value="schweiz">Schweiz</option>
+    <option value="deutschland">Deutschland</option>
+    <option value="russland">Russland</option>
+    <option value="frankreich">Frankreich</option>
+    <option value="usa">USA</option>
+  </select>
+
+  <button type="submit">Filtern</button>
+
+
+  <a href="http://localhost:9090/showMember">Link</a>
+</form>
+</body>
+</html>
