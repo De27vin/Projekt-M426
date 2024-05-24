@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Mitglieder</title>
+</head>
+<body>
+<h1>Mitglieder Liste</h1>
+<form action="/ergebnissFilter" method="get">
+  <input type="text" name="name" placeholder="Name eingeben">
+  <button type="submit">Suchen</button>
+</form>
+<ul>
+  <tr th:each="member : ${members}">
+    <td th:text="${member.firstName}">First Name</td>
+    <!-- Weitere Spalten -->
+  </tr>
+
+</ul>
+</body>
+</html>

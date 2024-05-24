@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MitgliedController {
@@ -29,7 +29,12 @@ public class MitgliedController {
     @PostMapping("/addMember")
     public String addMember(@ModelAttribute Mitglied member) {
         mitgliedService.createMember(member);
-        return "redirect:/showMember"; // Korrekte Weiterleitung
+        return "redirect:/showMember";
     }
 
+    @GetMapping("/ergebnissFilter")
+    public String filterMembers(@RequestParam("name") String name, Model model) {
+        model.addAttribute("members", mitgliedService.findMembersByName(name));
+        return "ergebnissFilter"; // Dies zeigt die Vorlage "filterMembers.html" an
+    }
 }

@@ -26,7 +26,7 @@ th, td {
 }
 
 th {
-    background-color: #007BFF;
+    background-color: #da8017;
     color: white;
 }
 
@@ -40,7 +40,7 @@ thead {
     z-index: 1;
 }
 .navbar {
-    background-color: #333;
+    background-color: #3f3f3f;
     color: #fff;
     padding: 10px 0;
 }
