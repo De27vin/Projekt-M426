@@ -2,12 +2,14 @@ package ch.bbw.jr.mitglied;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+
 @Entity
-@Table(name="member")
+@Table(name = "member")
 public class Mitglied implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
     private int memberId;
 
@@ -27,10 +29,10 @@ public class Mitglied implements Serializable {
     private String title;
 
     @Column(name = "phone")
-    private String phone;  // Telefonnummern sollten als String gespeichert werden
+    private String phone;
 
     @Column(name = "entry_date")
-    private String entryDate;
+    private LocalDate entryDate; // Ändern Sie den Datentyp von String zu LocalDate
 
     // Getter und Setter für alle Felder
 
@@ -90,11 +92,11 @@ public class Mitglied implements Serializable {
         this.phone = phone;
     }
 
-    public String getEntryDate() {
+    public LocalDate getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(String entryDate) {
+    public void setEntryDate(LocalDate entryDate) {
         this.entryDate = entryDate;
     }
 }

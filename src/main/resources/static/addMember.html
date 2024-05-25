@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neues Mitglied hinzufügen</title>
+</head>
+<body>
+<h1>Neues Mitglied hinzufügen</h1>
+<form action="/addMember" method="post">
+    <label for="firstName">Vorname:</label>
+    <input type="text" id="firstName" name="firstName"><br><br>
+
+    <label for="lastName">Nachname:</label>
+    <input type="text" id="lastName" name="lastName"><br><br>
+
+    <label for="address">Adresse:</label>
+    <input type="text" id="address" name="address"><br><br>
+
+    <label for="city">Stadt:</label>
+    <input type="text" id="city" name="city"><br><br>
+
+    <label for="title">Titel:</label>
+    <input type="text" id="title" name="title"><br><br>
+
+    <label for="phone">Telefonnummer:</label>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <label for="entryDate">Eintrittsdatum:</label>
+    <input type="date" id="entryDate" name="entryDate" required>
+
+    <input type="submit" value="Mitglied hinzufügen">
+</form>
+</body>
+</html>
