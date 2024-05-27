@@ -1,34 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Neues Mitglied hinzufügen</title>
+    <link rel="stylesheet" type="text/css" href="addMemberStyles.css">
 </head>
 <body>
-<h1>Neues Mitglied hinzufügen</h1>
-<form action="/addMember" method="post">
-    <label for="firstName">Vorname:</label>
-    <input type="text" id="firstName" name="firstName"><br><br>
+<nav class="navbar">
+    <div class="container">
+        <h1 class="logo">Filmclub</h1>
+        <ul class="nav-links">
+            <li><a href="/index.html">Startseite</a></li>
+            <li><a href="http://localhost:9090/filterMembers.html">Filter</a></li>
+            <li><a href="http://localhost:9090/showMember">Liste aller Mitglieder</a></li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <label for="lastName">Nachname:</label>
-    <input type="text" id="lastName" name="lastName"><br><br>
+<div class="center-container">
+    <h1 class="titel">Neues Mitglied hinzufügen</h1>
+    <form th:action="@{/addMember}" th:object="${newMember}" method="post">
 
-    <label for="address">Adresse:</label>
-    <input type="text" id="address" name="address"><br><br>
+        <label for="firstName">Vorname:</label>
+        <input type="text" id="firstName" th:field="*{firstName}" required><br><br>
 
-    <label for="city">Stadt:</label>
-    <input type="text" id="city" name="city"><br><br>
+        <label for="lastName">Nachname: </label>
+        <input type="text" id="lastName" th:field="*{lastName}" required><br><br>
 
-    <label for="title">Titel:</label>
-    <input type="text" id="title" name="title"><br><br>
+        <label for="address">Adresse:</label>
+        <input type="text" id="address" th:field="*{address}" required><br><br>
 
-    <label for="phone">Telefonnummer:</label>
-    <input type="text" id="phone" name="phone"><br><br>
+        <label for="city">Stadt:</label>
+        <input type="text" id="city" th:field="*{city}" required><br><br>
 
-    <label for="entryDate">Eintrittsdatum:</label>
-    <input type="date" id="entryDate" name="entryDate" required>
+        <label for="title">Titel:</label>
+        <input type="text" id="title" th:field="*{title}"><br><br>
 
-    <input type="submit" value="Mitglied hinzufügen">
-</form>
+        <label for="phone">Telefonnummer:</label>
+        <input type="text" id="phone" th:field="*{phone}"><br><br>
+
+        <label for="entryDate">Eintrittsdatum:</label>
+        <input type="date" id="entryDate" th:field="*{entryDate}" required><br><br>
+
+        <input type="submit" value="Mitglied hinzufügen">
+    </form>
+</div>
 </body>
 </html>
