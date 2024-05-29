@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
 
 import java.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.validation.BindingResult;
 
 @Controller
 public class MitgliedController {
@@ -45,5 +44,15 @@ public class MitgliedController {
     public String filterMembers(@RequestParam("name") String name, Model model) {
         model.addAttribute("members", mitgliedService.findMembersByName(name));
         return "ergebnissFilter";
+    }
+
+    @GetMapping("/filterMembers")
+    public String showFilterMembersForm() {
+        return "filterMembers";
+    }
+
+    @GetMapping("/")
+    public String showHomePage() {
+        return "index";
     }
 }

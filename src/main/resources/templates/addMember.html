@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Neues Mitglied hinzufügen</title>
-    <link rel="stylesheet" type="text/css" href="addMemberStyles.css">
+    <link rel="stylesheet" type="text/css" href="/css/addMemberStyles.css">
 </head>
 <body>
 <nav class="navbar">
     <div class="container">
         <h1 class="logo">Filmclub</h1>
         <ul class="nav-links">
-            <li><a href="/index.html">Startseite</a></li>
-            <li><a href="http://localhost:9090/filterMembers.html">Filter</a></li>
-            <li><a href="http://localhost:9090/showMember">Liste aller Mitglieder</a></li>
+            <li><a href="/">Startseite</a></li>
+            <li><a href="/filterMembers">Filter</a></li>
+            <li><a href="/showMember">Liste aller Mitglieder</a></li>
+            <li><a href="/addMember">Mitglied hinzufügen</a></li>
         </ul>
     </div>
 </nav>
-<br>
 <br>
 <br>
 <br>
@@ -45,7 +45,7 @@
         <input type="text" id="title" th:field="*{title}"><br><br>
 
         <label for="phone">Telefonnummer:</label>
-        <input type="text" id="phone" th:field="*{phone}"><br><br>
+        <input type="text" id="phone" name="phone" pattern="^\d{10}$" required><br><br>
 
         <label for="entryDate">Eintrittsdatum:</label>
         <input type="date" id="entryDate" th:field="*{entryDate}" required><br><br>
@@ -53,5 +53,15 @@
         <input type="submit" value="Mitglied hinzufügen">
     </form>
 </div>
+<script>
+    function validatePhoneNumber() {
+        var phoneInput = document.getElementById('phone');
+        if (phoneInput.value.length !== 10) {
+            alert('Die Telefonnummer muss genau 10 Zeichen lang sein.');
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

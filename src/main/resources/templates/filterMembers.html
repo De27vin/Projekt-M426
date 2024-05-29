@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Mitglieder filtern</title>
+  <link rel="stylesheet" type="text/css" href="/css/addMemberStyles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <h1 class="logo">Filmclub</h1>
+    <ul class="nav-links">
+      <li><a href="/">Startseite</a></li>
+      <li><a href="/filterMembers">Filter</a></li>
+      <li><a href="/showMember">Liste aller Mitglieder</a></li>
+      <li><a href="/addMember">Mitglied hinzufügen</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="center-container">
+  <h1 class="titel">Mitglieder filtern</h1>
+  <form th:action="@{/ergebnissFilter}" method="get">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <input type="submit" value="Filtern">
+  </form>
+</div>
+</body>
+</html>
