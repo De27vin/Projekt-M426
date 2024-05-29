@@ -1,4 +1,4 @@
-Projekt von Zogheib, Jann, Nils und Rolf Kaufmann
+Projekt von Zogheib, Jann, Nils und Nils
 
 Wie starten:
 1) Im Terminal Ordner "Docker" öffnen und "docker compose up" eingeben um mit docker-compose.yml zu builden
