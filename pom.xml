@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ch.bbw.jr</groupId>
-	<artifactId>JokeApp</artifactId>
+	<artifactId>MemberApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JokeApp</name>
-	<description>Yvonnussy</description>
+	<name>Members</name>
+	<description>Scrum project</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
