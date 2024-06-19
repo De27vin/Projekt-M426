@@ -55,4 +55,5 @@ public class MitgliedController {
     public String showHomePage() {
         return "index";
     }
+
 }
