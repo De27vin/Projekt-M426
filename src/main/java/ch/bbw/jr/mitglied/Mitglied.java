@@ -1,6 +1,9 @@
 package ch.bbw.jr.mitglied;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -14,12 +17,15 @@ public class Mitglied implements Serializable {
     private int memberId;
 
     @Column(name = "first_name")
+    @Pattern(regexp = "^[^\\d]+$", message = "First name should not contain numbers")
     private String firstName;
 
     @Column(name = "last_name")
+    @Pattern(regexp = "^[^\\d]+$", message = "Last name should not contain numbers")
     private String lastName;
 
     @Column(name = "address")
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]+$", message = "Address should contain at least one letter and one number")
     private String address;
 
     @Column(name = "city")
@@ -29,12 +35,14 @@ public class Mitglied implements Serializable {
     private String title;
 
     @Column(name = "phone")
+    @Pattern(regexp = "^(\\+41|0041)\\d{9}$", message = "Phone number should start with +41 or 0041 and contain 9 digits")
     private String phone;
 
     @Column(name = "entry_date")
-    private LocalDate entryDate; // Ändern Sie den Datentyp von String zu LocalDate
+    private LocalDate entryDate;
 
-    // Getter und Setter für alle Felder
+
+    // Getter und Setter
 
     public int getMemberId() {
         return memberId;
