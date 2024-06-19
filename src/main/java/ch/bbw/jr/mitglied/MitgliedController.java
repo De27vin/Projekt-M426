@@ -1,13 +1,9 @@
 package ch.bbw.jr.mitglied;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -16,6 +12,8 @@ public class MitgliedController {
 
     @Autowired
     private MitgliedService mitgliedService;
+
+    // Andere Controller-Methoden ...
 
     @GetMapping("/showMember")
     public String showMembers(Model model) {
@@ -49,6 +47,13 @@ public class MitgliedController {
     @GetMapping("/filterMembers")
     public String showFilterMembersForm() {
         return "filterMembers";
+    }
+
+    @GetMapping("/deleteMember/{id}")
+    public String deleteMember(@PathVariable Long id, Model model) {
+        // Hier wird das Mitglied gelöscht
+        mitgliedService.deleteMemberById(id);
+        return "redirect:/filterMembers"; // Redirect zur Mitgliederliste
     }
 
     @GetMapping("/")
