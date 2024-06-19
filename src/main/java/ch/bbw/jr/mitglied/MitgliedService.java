@@ -25,4 +25,9 @@ public class MitgliedService {
     public List<Mitglied> findMembersByName(String name) {
         return mitgliedRepository.findByFirstNameContaining(name);
     }
+
+    // Methode zum Löschen eines Mitglieds anhand der ID
+    public void deleteMemberById(Long id) {
+        mitgliedRepository.deleteById(id);
+    }
 }
