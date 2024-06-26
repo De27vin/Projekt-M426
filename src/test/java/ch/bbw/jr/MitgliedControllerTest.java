@@ -37,12 +37,14 @@ public class MitgliedControllerTest {
     @Test
     public void testInvalidFirstName() {
         Mitglied mitglied = new Mitglied();
-        mitglied.setFirstName("John1");
-        mitglied.setLastName("Doe");
-        mitglied.setAddress("Street 123");
+        mitglied.setFirstName("Mike1");
+        mitglied.setLastName("Zogheib");
+        mitglied.setAddress("Strasse 123");
         mitglied.setPhone("+41123456789");
 
         Set<ConstraintViolation<Mitglied>> violations = validator.validate(mitglied);
+        violations.forEach(violation -> System.out.println(violation.getPropertyPath() + " " + violation.getMessage()));
+
         assertEquals(1, violations.size());
         assertEquals("First name should not contain numbers", violations.iterator().next().getMessage());
     }
@@ -50,12 +52,14 @@ public class MitgliedControllerTest {
     @Test
     public void testInvalidLastName() {
         Mitglied mitglied = new Mitglied();
-        mitglied.setFirstName("John");
-        mitglied.setLastName("Doe1");
-        mitglied.setAddress("Street 123");
+        mitglied.setFirstName("Mike");
+        mitglied.setLastName("Zogheib1");
+        mitglied.setAddress("Strasse 123");
         mitglied.setPhone("+41123456789");
 
         Set<ConstraintViolation<Mitglied>> violations = validator.validate(mitglied);
+        violations.forEach(violation -> System.out.println(violation.getPropertyPath() + " " + violation.getMessage()));
+
         assertEquals(1, violations.size());
         assertEquals("Last name should not contain numbers", violations.iterator().next().getMessage());
     }
@@ -63,12 +67,14 @@ public class MitgliedControllerTest {
     @Test
     public void testInvalidAddress() {
         Mitglied mitglied = new Mitglied();
-        mitglied.setFirstName("John");
-        mitglied.setLastName("Doe");
-        mitglied.setAddress("Street");
+        mitglied.setFirstName("Mike");
+        mitglied.setLastName("Zogheib");
+        mitglied.setAddress("Strasse");
         mitglied.setPhone("+41123456789");
 
         Set<ConstraintViolation<Mitglied>> violations = validator.validate(mitglied);
+        violations.forEach(violation -> System.out.println(violation.getPropertyPath() + " " + violation.getMessage()));
+
         assertEquals(1, violations.size());
         assertEquals("Address should contain at least one letter and one number", violations.iterator().next().getMessage());
     }
@@ -76,12 +82,14 @@ public class MitgliedControllerTest {
     @Test
     public void testInvalidPhone() {
         Mitglied mitglied = new Mitglied();
-        mitglied.setFirstName("John");
-        mitglied.setLastName("Doe");
-        mitglied.setAddress("Street 123");
+        mitglied.setFirstName("Mike");
+        mitglied.setLastName("Zogheib");
+        mitglied.setAddress("Strasse 123");
         mitglied.setPhone("123456789");
 
         Set<ConstraintViolation<Mitglied>> violations = validator.validate(mitglied);
+        violations.forEach(violation -> System.out.println(violation.getPropertyPath() + " " + violation.getMessage()));
+
         assertEquals(1, violations.size());
         assertEquals("Telefonnummer muss mit +41/0041 anfangen und 9 Stellen lang sein ", violations.iterator().next().getMessage());
     }
