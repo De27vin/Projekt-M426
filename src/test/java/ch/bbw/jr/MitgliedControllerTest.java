@@ -72,6 +72,7 @@ public class MitgliedControllerTest {
         mitglied.setAddress("Strasse");
         mitglied.setPhone("+41123456789");
 
+
         Set<ConstraintViolation<Mitglied>> violations = validator.validate(mitglied);
         violations.forEach(violation -> System.out.println(violation.getPropertyPath() + " " + violation.getMessage()));
 
